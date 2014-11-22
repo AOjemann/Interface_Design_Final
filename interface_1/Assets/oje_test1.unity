@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb01cfddcf8748e4cb56a9e90a8d2d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sal_name: 
+  sal_name: Player Salad
   sal_base: abba
   sal_top1: aa
   sal_top2: ss
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb01cfddcf8748e4cb56a9e90a8d2d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sal_name: 
+  sal_name: Example Salad
   sal_base: abba
   sal_top1: aa
   sal_top2: ss
@@ -160,6 +160,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1975414879}
+  - 114: {fileID: 1975414880}
   m_Layer: 0
   m_Name: checkOutButton(empty)
   m_TagString: Untagged
@@ -178,6 +179,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1975414880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975414878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5e9ae7e18dcbb4e80a94b59076af74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098338649
 GameObject:
   m_ObjectHideFlags: 0

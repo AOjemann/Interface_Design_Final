@@ -85,7 +85,7 @@ public class salad_compair : MonoBehaviour {
 		this.get_2salads();
 
 		//if all elements of salad are the same return true, else false
-		if (this.compair_base && this.compair_prot && this.compair_dress && this.compair_top) {
+		if (this.compair_base() && this.compair_prot() && this.compair_dress() && this.compair_top()) {
 						return true;
 				} else {
 			return false;		

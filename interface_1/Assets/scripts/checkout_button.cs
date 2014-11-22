@@ -27,7 +27,7 @@ public class checkout_button : MonoBehaviour {
 			print("win");
 				}
 		if (!winTmp){
-			print ("false");
+			print ("NOT win");
 		}
 	}
 
