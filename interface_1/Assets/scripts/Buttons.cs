@@ -5,6 +5,8 @@ public class Buttons : MonoBehaviour {
 	//Screen Indicator
 	private int count = 0;
 
+	public salad_struc salad;
+
 	//Game Timer
 	private float timer = 100;
 
@@ -24,6 +26,13 @@ public class Buttons : MonoBehaviour {
 
 	//Allows for custom icons
 	public GUIStyle style;
+
+	void Start() {
+		GameObject player;
+		player = GameObject.FindWithTag ("player");
+		salad_struc[] tmp = player.GetComponents<salad_struc> ();
+		salad = tmp [1];
+	}
 
 	//Updates the game in terms of player using the arrow keys to move screens or reset the game
 	void Update() {
@@ -96,6 +105,7 @@ public class Buttons : MonoBehaviour {
 	void screenGUI1 () {
 	if (count == 0) {
 		if (GUI.Button (new Rect (50, 20, sizex, sizey),icon, style)) {
+			salad.add_top("red");
 			print ("you clicked the icon 1");
 			ic1 = true;
 		}
@@ -104,19 +114,22 @@ public class Buttons : MonoBehaviour {
 			ic2 = true;
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 2), sizex, sizey),icon3, style)) {
-			print ("you clicked the icon 3");
+				salad.add_top("yellow");
+				print ("you clicked the icon 3");
 		}
 		if (GUI.Button (new Rect (50 + (sizex * 4), 20, sizex, sizey),icon, style)) {
 			print ("you clicked the icon 4");
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 4), sizex, sizey),icon2, style)) {
-			print ("you clicked the icon 5");
+				salad.add_top("green");
+				print ("you clicked the icon 5");
 		}
 		if (GUI.Button (new Rect (50 + (sizex * 6), 20, sizex, sizey),icon3, style)) {
 			print ("you clicked the icon 6");
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 6), sizex, sizey),icon, style)) {
-			print ("you clicked the icon 7");
+				salad.add_top("red");
+				print ("you clicked the icon 7");
 		}
 	}
 	}
