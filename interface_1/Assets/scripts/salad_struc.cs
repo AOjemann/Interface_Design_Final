@@ -82,7 +82,7 @@ public class salad_struc : MonoBehaviour {
 				}
 	}
 
-	void add_top2(string sTop){
+	protected void add_top2(string sTop){
 		//if topping 2 is alredy filled move to 3
 		if (sal_top2 != null) {
 			add_top3(sTop);
@@ -95,7 +95,7 @@ public class salad_struc : MonoBehaviour {
 		}
 	}
 
-	void add_top3(string sTop){
+	protected void add_top3(string sTop){
 		//if topping 3 is alredy filled inform player and do nothing
 		if (sal_top3 != null) {
 			print ("all toppings filled");
