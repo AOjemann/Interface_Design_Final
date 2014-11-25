@@ -29,7 +29,7 @@ public class Buttons : MonoBehaviour {
 
 	void Start() {
 		GameObject player;
-		player = GameObject.FindWithTag ("player");
+		player = GameObject.FindWithTag ("Player");
 		salad_struc[] tmp = player.GetComponents<salad_struc> ();
 		salad = tmp [1];
 	}
@@ -114,21 +114,21 @@ public class Buttons : MonoBehaviour {
 			ic2 = true;
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 2), sizex, sizey),icon3, style)) {
-				salad.add_top("yellow");
+				salad.add_base("yellow");
 				print ("you clicked the icon 3");
 		}
 		if (GUI.Button (new Rect (50 + (sizex * 4), 20, sizex, sizey),icon, style)) {
 			print ("you clicked the icon 4");
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 4), sizex, sizey),icon2, style)) {
-				salad.add_top("green");
+				salad.add_dress("green");
 				print ("you clicked the icon 5");
 		}
 		if (GUI.Button (new Rect (50 + (sizex * 6), 20, sizex, sizey),icon3, style)) {
 			print ("you clicked the icon 6");
 		}
 		if (GUI.Button (new Rect (50, 20 + (sizey * 6), sizex, sizey),icon, style)) {
-				salad.add_top("red");
+				salad.add_prot("red");
 				print ("you clicked the icon 7");
 		}
 	}

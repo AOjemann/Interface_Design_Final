@@ -7,6 +7,8 @@ public class salad_struc : MonoBehaviour {
 	public string sal_name;
 
 	//base, toppings 3, protien, dressing
+
+	//IF USING NULL: make private use constructor in loading script
 	public string sal_base;
 	public string sal_top1;
 	public string sal_top2;
@@ -32,7 +34,7 @@ public class salad_struc : MonoBehaviour {
 	//add base
 	public void add_base(string sBase){
 		//if already have base tell player and do nothing
-		if (this.sal_base != null) {
+		if (!this.sal_base.Equals("") /*!= null*/) {
 				print("salad already has base");
 			} 
 		//otherwise add the base
@@ -45,7 +47,7 @@ public class salad_struc : MonoBehaviour {
 	//add protien
 	public void add_prot(string sProt){
 		//if already have protien tell player and do nothing
-		if (this.sal_prot != null) {
+		if (!this.sal_prot.Equals("") /*!= null*/) {
 			print("salad already has protien");
 		} 
 		//otherwise add the protien
@@ -58,7 +60,7 @@ public class salad_struc : MonoBehaviour {
 	//add dressing
 	public void add_dress(string sDress){
 		//if already have dressing tell player and do nothing
-		if (this.sal_dress != null) {
+		if (!this.sal_dress.Equals("") /*!= null*/) {
 			print("salad already has dressing");
 		} 
 		//otherwise add the protien
@@ -71,7 +73,7 @@ public class salad_struc : MonoBehaviour {
 	//add topping
 	public void add_top(string sTop){
 		//if topping 1 is alredy filled move to 2
-		if (sal_top1 != null) {
+		if (!sal_top1.Equals("") /*!= null*/) {
 			add_top2(sTop);
 				} 
 		//otherwies add topping to 1
@@ -84,7 +86,7 @@ public class salad_struc : MonoBehaviour {
 
 	protected void add_top2(string sTop){
 		//if topping 2 is alredy filled move to 3
-		if (sal_top2 != null) {
+		if (!sal_top2.Equals("") /*!= null*/) {
 			add_top3(sTop);
 		} 
 		//otherwies add topping to 2
@@ -97,7 +99,7 @@ public class salad_struc : MonoBehaviour {
 
 	protected void add_top3(string sTop){
 		//if topping 3 is alredy filled inform player and do nothing
-		if (sal_top3 != null) {
+		if (!sal_top3.Equals("") /*!= null*/) {
 			print ("all toppings filled");
 		} 
 		//otherwies add topping to 3
@@ -111,12 +113,18 @@ public class salad_struc : MonoBehaviour {
 
 	//clear ALL elements from salad
 	public void clear_sal(){
-		this.sal_base = null;
+		/*this.sal_base = null;
 		this.sal_dress = null;
 		this.sal_prot = null;
 		this.sal_top1 = null;
 		this.sal_top2 = null;
-		this.sal_top3 = null;
+		this.sal_top3 = null;*/
+		this.sal_base = "";
+		this.sal_dress = "";
+		this.sal_prot = "";
+		this.sal_top1 = "";
+		this.sal_top2 = "";
+		this.sal_top3 = "";
 		sal_top_num = 0;
 		print ("salad cleared");
 		}
