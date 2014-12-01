@@ -24,6 +24,9 @@ public class Buttons : MonoBehaviour {
 	//Texture for the bowl
 	public Texture2D bowl;
 
+	//Background
+	public Texture2D background;
+
 	//Allows for custom icons
 	public GUIStyle style;
 
@@ -104,30 +107,32 @@ public class Buttons : MonoBehaviour {
 	//Determines the icons on screen 1
 	void screenGUI1 () {
 	if (count == 0) {
-		if (GUI.Button (new Rect (50, 20, sizex, sizey),icon, style)) {
+			GUI.Label (new Rect (200, 0,2000,600), background, style);
+			saladGUI();
+		if (GUI.Button (new Rect (425, 305, sizex, sizey),icon, style)) {
 			salad.add_top("red");
 			print ("you clicked the icon 1");
 			ic1 = true;
 		}
-		if (GUI.Button (new Rect (50 + (sizex * 2), 20, sizex, sizey),icon2, style)) {
+		if (GUI.Button (new Rect (500, 305, sizex, sizey),icon2, style)) {
 			print ("you clicked the icon 2");
 			ic2 = true;
 		}
-		if (GUI.Button (new Rect (50, 20 + (sizey * 2), sizex, sizey),icon3, style)) {
+		if (GUI.Button (new Rect (393, 257 + (sizey * 2), sizex, sizey),icon3, style)) {
 				salad.add_base("yellow");
 				print ("you clicked the icon 3");
 		}
-		if (GUI.Button (new Rect (50 + (sizex * 4), 20, sizex, sizey),icon, style)) {
+		if (GUI.Button (new Rect (650, 305, sizex, sizey),icon, style)) {
 			print ("you clicked the icon 4");
 		}
-		if (GUI.Button (new Rect (50, 20 + (sizey * 4), sizex, sizey),icon2, style)) {
+		if (GUI.Button (new Rect (355, 207 + (sizey * 4), sizex, sizey),icon2, style)) {
 				salad.add_dress("green");
 				print ("you clicked the icon 5");
 		}
-		if (GUI.Button (new Rect (50 + (sizex * 6), 20, sizex, sizey),icon3, style)) {
+		if (GUI.Button (new Rect (800, 305, sizex, sizey),icon3, style)) {
 			print ("you clicked the icon 6");
 		}
-		if (GUI.Button (new Rect (50, 20 + (sizey * 6), sizex, sizey),icon, style)) {
+		if (GUI.Button (new Rect (315, 257 + (sizey * 2), sizex, sizey),icon, style)) {
 				salad.add_prot("red");
 				print ("you clicked the icon 7");
 		}
