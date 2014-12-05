@@ -4,6 +4,7 @@
 TagManager:
   tags:
   - Player
+  - buttons
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

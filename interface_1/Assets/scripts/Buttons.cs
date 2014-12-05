@@ -122,7 +122,7 @@ public class Buttons : MonoBehaviour {
 		salad.clear_sal ();
 		}
 
-	void timeReduce() {
+	public void timeReduce() {
 		timer -= 10;
 		}
 
@@ -209,11 +209,11 @@ public class Buttons : MonoBehaviour {
 				}
 		}
 
-	void winLevel() {
+	public void winLevel() {
 		win = true;
 	}
 
-	string nextOrder (string salad) {
+	public string nextOrder (string salad) {
 		return salad;
 		}
 
