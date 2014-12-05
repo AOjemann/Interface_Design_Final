@@ -10,6 +10,17 @@ public class Buttons : MonoBehaviour {
 	//Game Timer
 	private float timer = 100;
 
+	//If Timer Runs You Lose
+	private bool lose = false;
+
+	//If you complete enough salads, you win
+	public bool win = false;
+
+	private bool tempX = false;
+	private bool tempO = false;
+	private float locTimerO = 4;
+	private float locTimerX = 4;
+
 	//Sizex and Sizey represent the size of the icons/images
 	private int sizex = 53;
 	private int sizey = 52;
@@ -48,6 +59,9 @@ public class Buttons : MonoBehaviour {
 	//Allows for custom icons
 	public GUIStyle style;
 	public GUIStyle style2;
+	public GUIStyle style3;
+	public GUIStyle correct;
+	public GUIStyle wrong;
 
 	void Start() {
 		GameObject player;
@@ -73,8 +87,25 @@ public class Buttons : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.R)) {
 						reset ();
 				}
-		if (count > 0) {
+		if (Input.GetKeyDown (KeyCode.X)) {
+			locTimerX = 4;
+			tempX = true;
+		}
+		if (Input.GetKeyDown (KeyCode.O)) {
+			locTimerO = 4;
+			tempO = true;
+		}
+		if (tempX) {
+			locTimerX -= Time.deltaTime;
+				}
+		if (tempO) {
+			locTimerO -= Time.deltaTime;
+		}
+		if (count > 0 && timer > 0) {
 						timer -= Time.deltaTime;
+				}
+		if (timer <= 0) {
+						lose = true;
 				}
 	}
 
@@ -91,6 +122,10 @@ public class Buttons : MonoBehaviour {
 		salad.clear_sal ();
 		}
 
+	void timeReduce() {
+		timer -= 10;
+		}
+
 	//Main GUI function, runs all the buttons
 	void OnGUI () {
 		//Screen indicator
@@ -98,27 +133,27 @@ public class Buttons : MonoBehaviour {
 
 		//Timer
 		if (count > 0) {
-						GUI.Label (new Rect (Screen.width - 100, 0, 100, 50), "Timer " + (int)timer);
+			GUI.Label (new Rect (Screen.width * 0.9f, 0, 100, 50), "Timer " + (int)timer);
 				}
 
 		//Bowl
 		//GUI.Label (new Rect (Screen.width/2, Screen.height - 50,50,50), bowl, style);
 
 		//Determines whether a player uses the buttons to switch screens
-		if (count == 0 || count == 2 || count == 3) {
-			if (GUI.Button (new Rect (Screen.width - 100, Screen.height / 2 - 30, 100, 100), "Next")) {
+		if ((count == 0 || count == 2 || count == 3) && lose == false) {
+			if (GUI.Button (new Rect (Screen.width * 0.927f, Screen.height * 0.45f, 100, 100), "Next")) {
 					Camera.main.transform.Translate (new Vector3 (26, 0, 0));
 					count += 1;
 						}
 				}
-		if (count == 1) {
-			if (GUI.Button (new Rect (Screen.width - 330, Screen.height - 75, 80, 65), "Here")) {
+		if (count == 1 && lose == false) {
+			if (GUI.Button (new Rect (Screen.width * 0.758f, Screen.height * 0.875f, 80, 65), "Here")) {
 				Camera.main.transform.Translate (new Vector3 (26, 0, 0));
 				count += 1;
 			}
 		}
-		if (count > 1) {
-			if (GUI.Button (new Rect (0, Screen.height / 2 - 30, 100, 100), "Back")) {
+		if (count > 1 && lose == false) {
+			if (GUI.Button (new Rect (0, Screen.height * 0.45f, 100, 100), "Back")) {
 				Camera.main.transform.Translate (new Vector3 (-26, 0, 0));
 				count -= 1;
 			}
@@ -130,40 +165,43 @@ public class Buttons : MonoBehaviour {
 		recipeScreenGUI ();
 		recipeScreenGUI2 ();
 		recipeScreenGUI3 ();
+		checkOutCorrectGUI();
+		checkOutIncorrectGUI();
+		loseScreenGUI ();
 		//screenGUI3 ();
 	}
 
 	//Determines what is in the salad/on top of the bowl
 	void saladGUI () {
 		if (rmne) {
-			GUI.Label (new Rect (Screen.width/2 - 55, Screen.height - 100,50,50), romaine, style);
+			GUI.Label (new Rect (Screen.width * 0.46f, Screen.height * 0.833f,50,50), romaine, style);
 		}
 		if (tms) {
-			GUI.Label (new Rect (Screen.width/2, Screen.height - 80,50,50), tomatoes, style);
+			GUI.Label (new Rect (Screen.width/2, Screen.height * 0.866f,50,50), tomatoes, style);
 		}
 		if (fta) {
-			GUI.Label (new Rect (Screen.width/2 - 105, Screen.height - 70,50,50), feta, style);
+			GUI.Label (new Rect (Screen.width * 0.423f, Screen.height * 0.883f,50,50), feta, style);
 		}
 		if (car) {
-			GUI.Label (new Rect (Screen.width/2 - 105, Screen.height - 100,50,50), carrots, style);
+			GUI.Label (new Rect (Screen.width * 0.423f, Screen.height * 0.833f,50,50), carrots, style);
 		}
 		if (crt) {
-			GUI.Label (new Rect (Screen.width/2 - 40, Screen.height - 65,50,50), crutons, style);
+			GUI.Label (new Rect (Screen.width * 0.471f, Screen.height * 0.891f,50,50), crutons, style);
 		}
 		if (dryc) {
-			GUI.Label (new Rect (Screen.width/2 - 60, Screen.height - 75,100,75), drycoral, style);
+			GUI.Label (new Rect (Screen.width * 0.456f, Screen.height * 0.875f,100,75), drycoral, style);
 		}
 		if (ppr) {
-			GUI.Label (new Rect (Screen.width/2 - 60, Screen.height - 90,50,50), peppers, style);
+			GUI.Label (new Rect (Screen.width * 0.456f, Screen.height * 0.849f,50,50), peppers, style);
 		}
 	}
 
 	void startScreenGUI() {
-	if (count == 0) {
-			GUI.Label (new Rect (200, 0,2000,600), startscreen, style); 
-			GUI.Box (new Rect(690, 60, 400, 300), "You are a new employee at the newest restaurant in the Atlantic. " +
-				"The motto of your company is that you are there to let shark eat" +
-			    "healthier. As such, you must feed all the hungry customers you" +
+		if (count == 0) {
+			GUI.Label (new Rect (Screen.width * 0.147f, 0,2000,600), startscreen, style); 
+			GUI.Box (new Rect(Screen.width * 0.505f, Screen.height * 0.1f, 400, 300), "You are a new employee at the newest restaurant in the Atlantic. " +
+				"The motto of your company is that you are there to let shark eat " +
+			    "healthier. As such, you must feed all the hungry customers you " +
 			    "get by click on the correct ingredients for their particular orders. " +
 				"If you get stuck, you can refer to the recipe book in the bottom-right " +
 			    "of the screen. Be aware, however, for sharks do not take kindly to " +
@@ -171,10 +209,36 @@ public class Buttons : MonoBehaviour {
 				}
 		}
 
+	void winLevel() {
+		win = true;
+	}
+
+	string nextOrder (string salad) {
+		return salad;
+		}
+
+	void loseScreenGUI() {
+		if (count > 0 && lose == true) {
+			GUI.Label (new Rect (Screen.width/3, Screen.height/3, 600, 600), "You're Shark Bait", style3);
+				}
+		}
+
+	public void checkOutCorrectGUI() {
+			if (locTimerO > 0 && count == 1 && tempO) {
+				GUI.Label (new Rect (Screen.width/3, Screen.height/3, 600, 600), "O", correct);
+		}
+	}
+
+	public void checkOutIncorrectGUI() {
+		if (locTimerX > 0 && count == 1 && tempX) {
+			GUI.Label (new Rect (Screen.width/3, Screen.height/3, 600, 600), "X", wrong);
+		}
+	}
+
 	void recipeScreenGUI() {
 		if (count == 2) {
-			GUI.Label (new Rect (350, 0,3000,3000), recipes, style);
-			GUI.Label (new Rect (450, 100, 250, 100), 
+			GUI.Label (new Rect (Screen.width * 0.256f, 0,3000,3000), recipes, style);
+			GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "Salty Shipwreck: " +
 			           "\n" +
 			           "\nShipwreck greens" +
@@ -193,7 +257,7 @@ public class Buttons : MonoBehaviour {
 			           "\nFeta cheese" +
 			           "\nRock moss" +
 			           "\nSeasalt", style2);
-			GUI.Label (new Rect (750, 100, 250, 100),
+			GUI.Label (new Rect (Screen.width * 0.549f, Screen.height * 0.167f, 250, 100),
 			           "\nHARDcore Vegetarian:" +
 			           "\n" +
 			           "\nKelp" +
@@ -213,8 +277,8 @@ public class Buttons : MonoBehaviour {
 
 	void recipeScreenGUI2() {
 		if (count == 3) {
-			GUI.Label (new Rect (350, 0,3000,3000), recipes, style);
-			GUI.Label (new Rect (450, 100, 250, 100), 
+			GUI.Label (new Rect (Screen.width * 0.256f, 0,3000,3000), recipes, style);
+			GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "\nRomaine Calm: " +
 			           "\n" +
 			           "\nRomaine" +
@@ -228,7 +292,7 @@ public class Buttons : MonoBehaviour {
 			           "\nTofu" +
 			           "\nMixed peppers" +
 			           "\nCarrots", style2);
-			GUI.Label (new Rect (750, 100, 250, 100),
+			GUI.Label (new Rect (Screen.width * 0.549f, Screen.height * 0.167f, 250, 100),
 			           "\nCrunchy Delight: " +
 			           "\n" +
 			           "\nRomaine" +
@@ -250,8 +314,8 @@ public class Buttons : MonoBehaviour {
 
 	void recipeScreenGUI3() {
 				if (count == 4) {
-						GUI.Label (new Rect (350, 0, 3000, 3000), recipes, style);
-						GUI.Label (new Rect (450, 100, 250, 100), 
+						GUI.Label (new Rect (Screen.width * 0.256f, 0, 3000, 3000), recipes, style);
+						GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "\nJellyMoss: " +
 			           "\n" +
 			           "\nKelp" +
@@ -263,78 +327,48 @@ public class Buttons : MonoBehaviour {
 
 	//Determines the icons on screen 1
 	void screenGUI2 () {
-	if (count == 1) {
-			GUI.Label (new Rect (200, 0,2000,600), background, style);
+	if (count == 1 && lose == false) {
+			GUI.Label (new Rect (Screen.width * 0.146f, 0,2000,600), background, style);
 			saladGUI();
-			GUI.Label (new Rect (250, 150, 100, 100), order, style);
-			GUI.Label (new Rect (260, 195, 80, 80), "Romain" +
-				"\ne " +
-				"Calm", style2);
-		if (GUI.Button (new Rect (430, 325, sizex, sizey),tomatoes, style)) {
+			GUI.Label (new Rect (Screen.width * 0.183f, Screen.height/4, 100, 100), order, style);
+			GUI.Label (new Rect (Screen.width * 0.19f, Screen.height * 0.326f, 80, 80), nextOrder("Romain" +
+			                                                                                      "\ne " +
+			                                                                                      "Calm"), style2);
+		if (GUI.Button (new Rect (Screen.width * 0.315f, Screen.height * 0.543f, sizex, sizey),tomatoes, style)) {
 				salad.add_top("red");
 				print ("you added tomatoes");
 				tms = true;
 		}
-		if (GUI.Button (new Rect (500, 325, sizex, sizey),carrots, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.366f, Screen.height * 0.543f, sizex, sizey),carrots, style)) {
 				salad.add_top("wrong");
 				print ("you added carrots");
 				car = true;
 		}
-		if (GUI.Button (new Rect (395, 262 + (sizey * 2), sizex, sizey),feta, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.289f, Screen.height * 0.612f, sizex, sizey),feta, style)) {
 				salad.add_base("yellow");
 				print ("you added feta");
 				fta = true;
 		}
-		if (GUI.Button (new Rect (620, 325, sizex * 2, sizey + 25),drycoral, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.454f, Screen.height * 0.543f, sizex * 2, sizey + 25),drycoral, style)) {
 				salad.add_top("wrong");
 				print ("you added dry coral");
 				dryc = true;
 		}
-		if (GUI.Button (new Rect (915, 217 + (sizey * 4), sizex, sizey),crutons, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.67f, Screen.height * 0.71f, sizex, sizey),crutons, style)) {
 				salad.add_dress("green");
 				print ("you added crutons");
 				crt = true;
 		}
-		if (GUI.Button (new Rect (775, 325, sizex, sizey),peppers, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.567f, Screen.height * 0.543f, sizex, sizey),peppers, style)) {
 				salad.add_top("wrong");
 				print ("you added peppers");
 				ppr = true;
 		}
-		if (GUI.Button (new Rect (315, 257 + (sizey * 2), sizex, sizey),romaine, style)) {
+		if (GUI.Button (new Rect (Screen.width * 0.23f, Screen.height * 0.604f, sizex, sizey),romaine, style)) {
 				salad.add_prot("red");
 				print ("you added romaine");
 				rmne = true;
 		}
 	}
 	}
-	/*
-	//Determines what happens on Screen 3
-	void screenGUI3 () {
-		if (count == 5) {
-			if (GUI.Button (new Rect (50, 20, sizex, sizey),tomatoes, style)) {
-				print ("you clicked the icon 1");
-				tms = true;
-			}
-			if (GUI.Button (new Rect (50 + (sizex * 2), 20, sizex, sizey),romaine, style)) {
-				print ("you clicked the icon 2");
-				rmne = true;
-			}
-			if (GUI.Button (new Rect (50, 20 + (sizey * 2), sizex, sizey),feta, style)) {
-				print ("you clicked the icon 3");
-			}
-			if (GUI.Button (new Rect (50 + (sizex * 4), 20, sizex, sizey),tomatoes, style)) {
-				print ("you clicked the icon 4");
-			}
-			if (GUI.Button (new Rect (50, 20 + (sizey * 4), sizex, sizey),romaine, style)) {
-				print ("you clicked the icon 5");
-			}
-			if (GUI.Button (new Rect (50 + (sizex * 6), 20, sizex, sizey),feta, style)) {
-				print ("you clicked the icon 6");
-			}
-			if (GUI.Button (new Rect (50, 20 + (sizey * 6), sizex, sizey),tomatoes, style)) {
-				print ("you clicked the icon 7");
-			}
-		}
-	}
-	*/
 }
