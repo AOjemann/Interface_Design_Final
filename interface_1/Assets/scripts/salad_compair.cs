@@ -12,6 +12,11 @@ public class salad_compair : MonoBehaviour {
 	string ex_top1;
 	string ex_top2;
 	string ex_top3;
+	string ex_top4;
+	string ex_top5;
+	string ex_top6;
+	string ex_top7;
+
 
 	int play_topNum;
 	string play_base;
@@ -20,6 +25,10 @@ public class salad_compair : MonoBehaviour {
 	string play_top1;
 	string play_top2;
 	string play_top3;
+	string play_top4;
+	string play_top5;
+	string play_top6;
+	string play_top7;
 
 
 	// Use this for initialization
@@ -53,11 +62,19 @@ public class salad_compair : MonoBehaviour {
 		string tmp_top1 = tmpSal.get_top1();
 		string tmp_top2 = tmpSal.get_top2();
 		string tmp_top3 = tmpSal.get_top3();
+		string tmp_top4 = tmpSal.get_top4();
+		string tmp_top5 = tmpSal.get_top5();
+		string tmp_top6 = tmpSal.get_top6();
+		string tmp_top7 = tmpSal.get_top7();
 
 		if (placer == 0) {
 			ex_top1 = tmp_top1;
 			ex_top2 = tmp_top2;
 			ex_top3 = tmp_top3;
+			ex_top4 = tmp_top4;
+			ex_top5 = tmp_top5;
+			ex_top6 = tmp_top6;
+			ex_top7 = tmp_top7;
 			ex_topNum = tmp_topNum;
 			ex_base = tmp_base;
 			ex_prot = tmp_prot;
@@ -69,6 +86,10 @@ public class salad_compair : MonoBehaviour {
 			play_top1 = tmp_top1;
 			play_top2 = tmp_top2;
 			play_top3 = tmp_top3;
+			play_top4 = tmp_top4;
+			play_top5 = tmp_top5;
+			play_top6 = tmp_top6;
+			play_top7 = tmp_top7;
 			play_topNum = tmp_topNum;
 			play_base = tmp_base;
 			play_prot = tmp_prot;
@@ -134,6 +155,26 @@ public class salad_compair : MonoBehaviour {
 				tmpMistakes = tmpMistakes + 1;
 			}
 		}
+		if (!ex_top4.Equals("none")){
+			if (!player_has_top(ex_top4)){
+				tmpMistakes = tmpMistakes + 1;
+			}
+		}
+		if (!ex_top5.Equals("none")){
+			if (!player_has_top(ex_top5)){
+				tmpMistakes = tmpMistakes + 1;
+			}
+		}
+		if (!ex_top6.Equals("none")){
+			if (!player_has_top(ex_top6)){
+				tmpMistakes = tmpMistakes + 1;
+			}
+		}
+		if (!ex_top7.Equals("none")){
+			if (!player_has_top(ex_top7)){
+				tmpMistakes = tmpMistakes + 1;
+			}
+		}
 		if (ex_topNum != play_topNum) {
 			tmpMistakes = tmpMistakes + 1;
 				}
@@ -154,7 +195,19 @@ public class salad_compair : MonoBehaviour {
 						return true;
 				} else if (tmpTop.Equals (play_top3)) {
 						return true;
-				} else {
+				}else if (tmpTop.Equals (play_top4)) {
+						return true;
+				}
+				else if (tmpTop.Equals (play_top5)) {
+						return true;
+				}
+				else if (tmpTop.Equals (play_top6)) {
+						return true;
+				}else if (tmpTop.Equals (play_top7)) {
+						return true;
+				}
+
+				else {
 						return false;
 				}
 
