@@ -795,6 +795,18 @@ Prefab:
       propertyPath: peppers
       value: 
       objectReference: {fileID: 2800000, guid: 91537f56ab6fba341b7b1fb79d4a800f, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: correct.m_FontSize
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: wrong.m_FontSize
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: clams
+      value: 
+      objectReference: {fileID: 2800000, guid: 8e45904e33310b54dbf7d0edfa8702b6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f86fc20762a150746815d00f92983b57, type: 2}
   m_RootGameObject: {fileID: 2124223884}
@@ -842,6 +854,7 @@ MonoBehaviour:
   drycoral: {fileID: 2800000, guid: cd646ff35d5512d488b7d44054847272, type: 3}
   carrots: {fileID: 2800000, guid: da9efba43d0f77a4fb2f86680b6c8444, type: 3}
   peppers: {fileID: 2800000, guid: 91537f56ab6fba341b7b1fb79d4a800f, type: 3}
+  clams: {fileID: 2800000, guid: 8e45904e33310b54dbf7d0edfa8702b6, type: 3}
   background: {fileID: 2800000, guid: 5ec7efe6838688743bea23bb6c5d778a, type: 3}
   startscreen: {fileID: 2800000, guid: e3135a7468aaf89418246efa30cb96ff, type: 3}
   losescreen: {fileID: 2800000, guid: 86011f26c8b82e741b79cd92a2593a6c, type: 3}
@@ -1071,7 +1084,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 108
+    m_FontSize: 640
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
@@ -1130,7 +1143,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 108
+    m_FontSize: 640
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0

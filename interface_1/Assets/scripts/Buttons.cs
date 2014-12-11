@@ -41,9 +41,12 @@ public class Buttons : MonoBehaviour {
 	private bool car = false;
 	public Texture2D peppers;
 	private bool ppr = false;
-
-	//Texture for the bowl
-	//public Texture2D bowl;
+	public Texture2D clams;
+	private bool clm = false;
+	public Texture2D tofu;
+	private bool tfu = false;
+	public Texture2D cucumber;
+	private bool cuc = false;
 
 	//Background
 	public Texture2D background;
@@ -106,7 +109,7 @@ public class Buttons : MonoBehaviour {
 		if (tempO) {
 			locTimerO -= Time.deltaTime;
 		}
-		if (count > 0 && timer > 0) {
+		if (count > 0 && timer > 0 && !win) {
 						timer -= Time.deltaTime;
 				}
 		if (timer <= 0) {
@@ -124,6 +127,9 @@ public class Buttons : MonoBehaviour {
 		dryc = false;
 		car = false;
 		ppr = false;
+		clm = false;
+		tfu = false;
+		cuc = false;
 		salad.clear_sal ();
 		}
 
@@ -173,6 +179,7 @@ public class Buttons : MonoBehaviour {
 		checkOutCorrectGUI();
 		checkOutIncorrectGUI();
 		loseScreenGUI ();
+		winScreenGUI ();
 		//screenGUI3 ();
 	}
 	//Screen.width * 0.456f, Screen.height * 0.875f,100,75
@@ -198,6 +205,15 @@ public class Buttons : MonoBehaviour {
 		}
 		if (ppr) {
 			GUI.Label (new Rect (Screen.width * 0.456f, Screen.height * 0.849f,50,50), peppers, style);
+		}
+		if (clm) {
+			GUI.Label (new Rect (Screen.width * 0.486f, Screen.height * 0.844f,50,50), clams, style);
+		}
+		if (tfu) {
+			GUI.Label (new Rect (Screen.width * 0.456f, Screen.height * 0.844f,50,50), tofu, style);
+		}
+		if (cuc) {
+			GUI.Label (new Rect (Screen.width * 0.44f, Screen.height * 0.832f,50,50), cucumber, style);
 		}
 	}
 
@@ -228,15 +244,21 @@ public class Buttons : MonoBehaviour {
 				}
 		}
 
+	void winScreenGUI() {
+				if (count > 0 && win) {
+						GUI.Label (new Rect (Screen.width / 3, Screen.height / 3, 600, 600), "You Win!", style3);
+				}
+		}
+
 	public void checkOutCorrectGUI() {
 			if (locTimerO > 0 && count == 1 && tempO) {
-				GUI.Label (new Rect (Screen.width/3, Screen.height/3, 600, 600), "O", correct);
+				GUI.Label (new Rect (Screen.width/3 - 50, Screen.height/500, 600, 600), "O", correct);
 		}
 	}
 
 	public void checkOutIncorrectGUI() {
 		if (locTimerX > 0 && count == 1 && tempX) {
-			GUI.Label (new Rect (Screen.width/3, Screen.height/3, 600, 600), "X", wrong);
+			GUI.Label (new Rect (Screen.width/3, Screen.height/500, 600, 600), "X", wrong);
 		}
 	}
 
@@ -267,7 +289,7 @@ public class Buttons : MonoBehaviour {
 			           "\n" +
 			           "\nKelp" +
 			           "\nRock moss" +
-			           "\nGround clam shells" +
+			           "\nGround discarded clam shells" +
 			           "\nDried coral chunks" +
 			           "\nCroutons" +
 			           "\n" +
@@ -337,10 +359,30 @@ public class Buttons : MonoBehaviour {
 			saladGUI();
 			GUI.Label (new Rect (Screen.width * 0.183f, Screen.height/4, 100, 100), order, style);
 			GUI.Label (new Rect (Screen.width * 0.19f, Screen.height * 0.326f, 80, 80), nextOrder(eXsalad.sal_name), style2);
+		if (GUI.Button (new Rect (Screen.width * 0.309f, Screen.height * 0.69f, sizex+10, sizey+10),clams, style)) {
+				salad.add_top("Ground clam shells");
+				print ("you added Ground clam shells");
+				clm = true;
+		}
+		if (GUI.Button (new Rect (Screen.width * 0.337f, Screen.height * 0.605f, sizex-20, sizey-20),cucumber, style)) {
+				salad.add_top("Sea cucumbers");
+				print ("you added Sea cucumbers");
+				cuc = true;
+		}
 		if (GUI.Button (new Rect (Screen.width * 0.355f, Screen.height * 0.537f, sizex-30, sizey-30),tomatoes, style)) {
 				salad.add_top("Tomatoes");
 				print ("you added Tomatoes");
 				tms = true;
+		}
+		if (GUI.Button (new Rect (Screen.width * 0.236f, Screen.height * 0.69f, sizex+10, sizey+10),crutons, style)) {
+				salad.add_top("Crutons");
+				print ("you added Crutons");
+				crt = true;
+		}
+		if (GUI.Button (new Rect (Screen.width * 0.277f, Screen.height * 0.605f, sizex-20, sizey-20),tofu, style)) {
+				salad.add_top("Tofu");
+				print ("you added Tofu");
+				tfu = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.307f, Screen.height * 0.538f, sizex-40, sizey-40),carrots, style)) {
 				salad.add_top("Carrots");
@@ -356,11 +398,6 @@ public class Buttons : MonoBehaviour {
 				salad.add_top("Dried coral chunks");
 				print ("you added Dried coral chunks");
 				dryc = true;
-		}
-		if (GUI.Button (new Rect (Screen.width * 0.236f, Screen.height * 0.69f, sizex+10, sizey+10),crutons, style)) {
-				salad.add_top("Crutons");
-				print ("you added Crutons");
-				crt = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.571f, Screen.height * 0.602f, sizex-20, sizey-20),peppers, style)) {
 				salad.add_top("Mixed peppers");
