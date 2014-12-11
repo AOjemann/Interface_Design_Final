@@ -142,8 +142,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
   m_HDR: 0
   m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!4 &537486181
 Transform:
   m_ObjectHideFlags: 0
@@ -155,6 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!114 &537486182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1001 &1030125331
 Prefab:
   m_ObjectHideFlags: 0
@@ -291,9 +296,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!65 &1351317402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -324,6 +328,7 @@ Transform:
   m_LocalScale: {x: 26, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1001 &1394020413
 Prefab:
   m_ObjectHideFlags: 0
@@ -674,7 +679,6 @@ GameObject:
   - 114: {fileID: 1667273794}
   - 114: {fileID: 1667273793}
   - 114: {fileID: 1667273792}
-  - 114: {fileID: 1667273791}
   - 114: {fileID: 1667273790}
   - 114: {fileID: 1667273789}
   m_Layer: 0
@@ -755,6 +759,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!114 &1667273789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,29 +806,6 @@ MonoBehaviour:
   sal_prot: 
   sal_dress: 
   sal_top_num: 5
---- !u!114 &1667273791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1667273784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb01cfddcf8748e4cb56a9e90a8d2d0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sal_name: Crunchy Delight
-  sal_base: 
-  sal_top1: Romaine
-  sal_top2: Tomatoes
-  sal_top3: Carrots
-  sal_top4: Feta
-  sal_top5: Sea cucumbers
-  sal_top6: Apples
-  sal_top7: 
-  sal_prot: 
-  sal_dress: 
-  sal_top_num: 6
 --- !u!114 &1667273792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbd7a7e1d2b181409c7df1ce2b6621d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number_of_recipies: 9
+  number_of_recipies: 8
 --- !u!1 &2124223884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,3 +1303,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 2

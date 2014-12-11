@@ -6,6 +6,7 @@ public class Buttons : MonoBehaviour {
 	private int count = 0;
 
 	public salad_struc salad;
+	public salad_struc eXsalad;
 
 	//Game Timer
 	private float timer = 100;
@@ -68,6 +69,7 @@ public class Buttons : MonoBehaviour {
 		player = GameObject.FindWithTag ("Player");
 		salad_struc[] tmp = player.GetComponents<salad_struc> ();
 		salad = tmp [1];
+		eXsalad = tmp [0];
 	}
 
 	//Updates the game in terms of player using the arrow keys to move screens or reset the game
@@ -331,41 +333,39 @@ public class Buttons : MonoBehaviour {
 			GUI.Label (new Rect (Screen.width * 0.146f, 0,2000,600), background, style);
 			saladGUI();
 			GUI.Label (new Rect (Screen.width * 0.183f, Screen.height/4, 100, 100), order, style);
-			GUI.Label (new Rect (Screen.width * 0.19f, Screen.height * 0.326f, 80, 80), nextOrder("Romain" +
-			                                                                                      "\ne " +
-			                                                                                      "Calm"), style2);
+			GUI.Label (new Rect (Screen.width * 0.19f, Screen.height * 0.326f, 80, 80), nextOrder(eXsalad.sal_name), style2);
 		if (GUI.Button (new Rect (Screen.width * 0.315f, Screen.height * 0.543f, sizex, sizey),tomatoes, style)) {
-				salad.add_top("red");
+				salad.add_top("Tomatoes");
 				print ("you added tomatoes");
 				tms = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.366f, Screen.height * 0.543f, sizex, sizey),carrots, style)) {
-				salad.add_top("wrong");
+				salad.add_top("Carrots");
 				print ("you added carrots");
 				car = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.289f, Screen.height * 0.612f, sizex, sizey),feta, style)) {
-				salad.add_base("yellow");
+				salad.add_top("Feta");
 				print ("you added feta");
 				fta = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.454f, Screen.height * 0.543f, sizex * 2, sizey + 25),drycoral, style)) {
-				salad.add_top("wrong");
+				salad.add_top("Dry Coral");
 				print ("you added dry coral");
 				dryc = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.67f, Screen.height * 0.71f, sizex, sizey),crutons, style)) {
-				salad.add_dress("green");
+				salad.add_top("Crutons");
 				print ("you added crutons");
 				crt = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.567f, Screen.height * 0.543f, sizex, sizey),peppers, style)) {
-				salad.add_top("wrong");
+				salad.add_top("Peppers");
 				print ("you added peppers");
 				ppr = true;
 		}
 		if (GUI.Button (new Rect (Screen.width * 0.23f, Screen.height * 0.604f, sizex, sizey),romaine, style)) {
-				salad.add_prot("red");
+				salad.add_top("Romaine");
 				print ("you added romaine");
 				rmne = true;
 		}

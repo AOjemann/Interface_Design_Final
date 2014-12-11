@@ -52,6 +52,7 @@ public class salad_randomizer : MonoBehaviour {
 		exSal.add_top (randomSal.get_top6());
 		exSal.add_top (randomSal.get_top7());
 		exSal.sal_top_num = randomSal.sal_top_num;
+		exSal.sal_name = randomSal.get_salName ();
 
 		print (randomSal.sal_name);
 		buttonSTMP.nextOrder (randomSal.sal_name);

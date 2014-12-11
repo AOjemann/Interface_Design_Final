@@ -269,4 +269,8 @@ public class salad_struc : MonoBehaviour {
 		return sal_top_num;
 		}
 
+	public string get_salName(){
+		return sal_name;
+	}
+
 }
