@@ -258,46 +258,49 @@ public class Buttons : MonoBehaviour {
 	}
 
 	void legendGUI() {
-		//Left side
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f,50,50), kelp, style);
-		GUI.Label (new Rect (Screen.width * 0.05f, Screen.height * 0.01f, 100, 40), "Kelp");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.11f,50,50), romaine, style);
-		GUI.Label (new Rect (Screen.width * 0.05f, Screen.height * 0.11f, 100, 40), "Romaine");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.21f,75,75), carrots, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.21f, 100, 40), "Carrots");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.28f,75,75), tofu, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.28f, 100, 40), "Tofu");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.35f,75,75), crutons, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.35f, 100, 40), "Crutons");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.41f,75,75), tomatoes, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.41f, 100, 40), "Tomatoes");
-		//Skip Button
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.5f + 75,75,75), cucumber, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.5f + 75, 100, 40), "Sea Cucumbers");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.57f + 75,75,75), clams, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.57f + 75, 100, 40), "Ground Clam Shells");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.65f + 75,75,75), jelly, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.64f + 75, 100, 40), "Jellyfish Jelly");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.70f + 75,75,75), blubber, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.69f + 75, 100, 40), "Whale Blubber");
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.74f + 75,75,75), feta, style);
-		GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.74f + 75, 100, 40), "Feta Cheese");
-		//Right side
-		GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.01f,75,75), peppers, style);
-		GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.01f, 100, 40), "Mixed Peppers");
-		GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.08f,75,75), salt, style);
-		GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.08f, 100, 40), "Sea Salt");
-		GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.15f,75,75), greens, style);
-		GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.15f, 100, 40), "Shipwreck Greens");
-		GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.22f,75,75), moss, style);
-		GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.22f, 100, 40), "Rock Moss");
-		GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.29f,75,75), drycoral, style);
-		GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.29f, 100, 40), "Dried Coral Chunks");
+		if (count > 0) {
+						//Left side
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.01f, 50, 50), kelp, style);
+						GUI.Label (new Rect (Screen.width * 0.05f, Screen.height * 0.01f, 100, 40), "Kelp");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.11f, 50, 50), romaine, style);
+						GUI.Label (new Rect (Screen.width * 0.05f, Screen.height * 0.11f, 100, 40), "Romaine");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.21f, 75, 75), carrots, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.21f, 100, 40), "Carrots");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.28f, 75, 75), tofu, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.28f, 100, 40), "Tofu");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.35f, 75, 75), crutons, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.35f, 100, 40), "Crutons");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.41f, 75, 75), tomatoes, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.41f, 100, 40), "Tomatoes");
+						//Skip Button
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.5f + 75, 75, 75), cucumber, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.5f + 75, 100, 40), "Sea Cucumbers");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.57f + 75, 75, 75), clams, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.57f + 75, 100, 40), "Ground Clam Shells");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.65f + 75, 75, 75), jelly, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.64f + 75, 100, 40), "Jellyfish Jelly");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.70f + 75, 75, 75), blubber, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.69f + 75, 100, 40), "Whale Blubber");
+						GUI.Label (new Rect (Screen.width * 0.01f, Screen.height * 0.74f + 75, 75, 75), feta, style);
+						GUI.Label (new Rect (Screen.width * 0.075f, Screen.height * 0.74f + 75, 100, 40), "Feta Cheese");
+						//Right side
+						GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.01f, 75, 75), peppers, style);
+						GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.01f, 100, 40), "Mixed Peppers");
+						GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.08f, 75, 75), salt, style);
+						GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.08f, 100, 40), "Sea Salt");
+						GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.15f, 75, 75), greens, style);
+						GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.15f, 100, 40), "Shipwreck Greens");
+						GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.22f, 75, 75), moss, style);
+						GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.22f, 100, 40), "Rock Moss");
+						GUI.Label (new Rect (Screen.width * 0.85f, Screen.height * 0.29f, 75, 75), drycoral, style);
+						GUI.Label (new Rect (Screen.width * 0.915f, Screen.height * 0.29f, 100, 40), "Dried Coral Chunks");
+				}
 	}
 
 	void startScreenGUI() {
 		if (count == 0) {
-			GUI.Label (new Rect (Screen.width * 0.147f, 0,2000,600), startscreen, style); 
+			//GUI.Label (new Rect (Screen.width * 0.147f, 0,2000,600), startscreen, style);
+			GUI.Label (new Rect (Screen.width * 0.147f, 0,Screen.width,Screen.height), startscreen, style); 
 			GUI.Box (new Rect(Screen.width * 0.505f, Screen.height * 0.1f, 400, 300), "You are a new employee at the newest restaurant in the Atlantic. " +
 				"The motto of your company is that you are there to let shark eat " +
 			    "healthier. As such, you must feed all the hungry customers you " +
@@ -318,7 +321,8 @@ public class Buttons : MonoBehaviour {
 
 	void loseScreenGUI() {
 		if (count > 0 && lose == true) {
-			GUI.Label (new Rect (Screen.width * 0.146f, 0,2000,600), losescreen, style);
+			//GUI.Label (new Rect (Screen.width * 0.146f, 0,2000,600), losescreen, style);
+			GUI.Label (new Rect (Screen.width * 0.146f, 0,Screen.width,Screen.height), losescreen, style);
 				}
 		}
 
@@ -342,7 +346,8 @@ public class Buttons : MonoBehaviour {
 
 	void recipeScreenGUI() {
 		if (count == 2) {
-			GUI.Label (new Rect (Screen.width * 0.256f, 0,3000,3000), recipes, style);
+			//GUI.Label (new Rect (Screen.width * 0.256f, 0,3000,3000), recipes, style);
+			GUI.Label (new Rect (Screen.width * 0.256f, 0,Screen.width,Screen.height), recipes, style);
 			GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "Salty Shipwreck: " +
 			           "\n" +
@@ -382,7 +387,7 @@ public class Buttons : MonoBehaviour {
 
 	void recipeScreenGUI2() {
 		if (count == 3) {
-			GUI.Label (new Rect (Screen.width * 0.256f, 0,3000,3000), recipes, style);
+			GUI.Label (new Rect (Screen.width * 0.256f, 0,Screen.width,Screen.height), recipes, style);
 			GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "\nRomaine Calm: " +
 			           "\n" +
@@ -419,7 +424,7 @@ public class Buttons : MonoBehaviour {
 
 	void recipeScreenGUI3() {
 				if (count == 4) {
-						GUI.Label (new Rect (Screen.width * 0.256f, 0, 3000, 3000), recipes, style);
+			GUI.Label (new Rect (Screen.width * 0.256f, 0, Screen.width,Screen.height), recipes, style);
 						GUI.Label (new Rect (Screen.width * 0.329f, Screen.height * 0.167f, 250, 100), 
 			           "\nJellyMoss: " +
 			           "\n" +
@@ -517,7 +522,7 @@ public class Buttons : MonoBehaviour {
 				print ("you added Jellyfish jelly");
 				jly = true;
 		}
-			GUI.Label (new Rect (Screen.width * 0.146f, 0,2000,600), background, style);
+			GUI.Label (new Rect (Screen.width * 0.146f, 0,Screen.width,Screen.height), background, style);
 			saladGUI();
 			GUI.Label (new Rect (Screen.width * 0.183f, Screen.height/4, 100, 100), order, style);
 			GUI.Label (new Rect (Screen.width * 0.19f, Screen.height * 0.326f, 80, 80), nextOrder(eXsalad.sal_name), style2);
