@@ -32,7 +32,7 @@ public class checkout_button : MonoBehaviour {
 		salad_randomizer tmpSalRand = tmpPlayer.GetComponent<salad_randomizer> ();
 		salad_compair sal_comp_tmp = tmpPlayer.GetComponent<salad_compair> ();
 		bool winTmp = sal_comp_tmp.compair_sal ();
-		if (winTmp) {
+		if (winTmp && buttonScriptTMP.win == false) {
 			print("Correct");
 			buttonScriptTMP.locTimerO = 2;
 			buttonScriptTMP.tempO = true;
@@ -42,10 +42,10 @@ public class checkout_button : MonoBehaviour {
 			if (correctCount >= correctTillNextLevel){
 				buttonScriptTMP.winLevel();
 				buttonScriptTMP.checkOutCorrectGUI();
-				tmpSalRand.setRandomSaladFromBook();
+				//tmpSalRand.setRandomSaladFromBook();
 					}
 				}
-		if (!winTmp){
+		if (!winTmp && buttonScriptTMP.win == false){
 			print ("Not Correct, -10sec");
 			buttonScriptTMP.timeReduce();
 			buttonScriptTMP.checkOutIncorrectGUI();

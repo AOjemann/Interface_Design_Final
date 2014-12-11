@@ -616,7 +616,7 @@ MonoBehaviour:
   sal_base: 
   sal_top1: Romaine
   sal_top2: Tomatoes
-  sal_top3: Feta
+  sal_top3: Feta cheese
   sal_top4: Crutons
   sal_top5: 
   sal_top6: 
@@ -689,7 +689,7 @@ MonoBehaviour:
   sal_top4: Carrots
   sal_top5: Feta cheese
   sal_top6: Rock moss
-  sal_top7: Seasalt
+  sal_top7: Sea salt
   sal_prot: 
   sal_dress: 
   sal_top_num: 7
@@ -709,7 +709,7 @@ MonoBehaviour:
   sal_top1: Shipwreck greens
   sal_top2: Carrots
   sal_top3: Dried coral chunks
-  sal_top4: Sea cucumber cucumbers
+  sal_top4: Sea cucumbers
   sal_top5: Ground discarded clam shells
   sal_top6: Sea salt
   sal_top7: 
@@ -807,6 +807,78 @@ Prefab:
       propertyPath: clams
       value: 
       objectReference: {fileID: 2800000, guid: 8e45904e33310b54dbf7d0edfa8702b6, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: tofu
+      value: 
+      objectReference: {fileID: 2800000, guid: 6b40c846659ffe64f8fc3d15a1f7346f, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: cucumber
+      value: 
+      objectReference: {fileID: 2800000, guid: 9725882fb1d13264e977a11f698a6abd, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: jelly
+      value: 
+      objectReference: {fileID: 2800000, guid: 1d53d18586186404fae26764dc438e74, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_Normal.m_TextColor.r
+      value: .95588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_Normal.m_TextColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_Normal.m_TextColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style2.m_FontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style4.m_WordWrap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style5.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style5.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: style5.m_WordWrap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: kelp
+      value: 
+      objectReference: {fileID: 2800000, guid: a5136897383179e4fa0c7d9931ac9442, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: blubber
+      value: 
+      objectReference: {fileID: 2800000, guid: bfb72aaf14c479d47b39b5f1f158f365, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: salt
+      value: 
+      objectReference: {fileID: 2800000, guid: 2f1d6ac465ac1a6409f4c6e8746eb411, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: moss
+      value: 
+      objectReference: {fileID: 2800000, guid: 758a62cda5d28294ba809179e0ca3167, type: 3}
+    - target: {fileID: 11400000, guid: f86fc20762a150746815d00f92983b57, type: 2}
+      propertyPath: greens
+      value: 
+      objectReference: {fileID: 2800000, guid: a022b032c10205846a68fee815c58c2c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f86fc20762a150746815d00f92983b57, type: 2}
   m_RootGameObject: {fileID: 2124223884}
@@ -855,6 +927,14 @@ MonoBehaviour:
   carrots: {fileID: 2800000, guid: da9efba43d0f77a4fb2f86680b6c8444, type: 3}
   peppers: {fileID: 2800000, guid: 91537f56ab6fba341b7b1fb79d4a800f, type: 3}
   clams: {fileID: 2800000, guid: 8e45904e33310b54dbf7d0edfa8702b6, type: 3}
+  tofu: {fileID: 2800000, guid: 6b40c846659ffe64f8fc3d15a1f7346f, type: 3}
+  cucumber: {fileID: 2800000, guid: 9725882fb1d13264e977a11f698a6abd, type: 3}
+  jelly: {fileID: 2800000, guid: 1d53d18586186404fae26764dc438e74, type: 3}
+  kelp: {fileID: 2800000, guid: a5136897383179e4fa0c7d9931ac9442, type: 3}
+  blubber: {fileID: 2800000, guid: bfb72aaf14c479d47b39b5f1f158f365, type: 3}
+  salt: {fileID: 2800000, guid: 2f1d6ac465ac1a6409f4c6e8746eb411, type: 3}
+  moss: {fileID: 2800000, guid: 758a62cda5d28294ba809179e0ca3167, type: 3}
+  greens: {fileID: 2800000, guid: a022b032c10205846a68fee815c58c2c, type: 3}
   background: {fileID: 2800000, guid: 5ec7efe6838688743bea23bb6c5d778a, type: 3}
   startscreen: {fileID: 2800000, guid: e3135a7468aaf89418246efa30cb96ff, type: 3}
   losescreen: {fileID: 2800000, guid: 86011f26c8b82e741b79cd92a2593a6c, type: 3}
@@ -966,7 +1046,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 12
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 1
@@ -1029,6 +1109,124 @@ MonoBehaviour:
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  style4:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: .95588237, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 1
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  style5:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 1
     m_RichText: 1
     m_TextClipping: 0
     m_ImagePosition: 0
