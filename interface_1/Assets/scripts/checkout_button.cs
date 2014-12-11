@@ -34,17 +34,23 @@ public class checkout_button : MonoBehaviour {
 		bool winTmp = sal_comp_tmp.compair_sal ();
 		if (winTmp) {
 			print("Correct");
+			buttonScriptTMP.locTimerO = 2;
+			buttonScriptTMP.tempO = true;
 			correctCount = correctCount + 1;
+			buttonScriptTMP.reset();
+			tmpSalRand.setRandomSaladFromBook();
 			if (correctCount >= correctTillNextLevel){
 				buttonScriptTMP.winLevel();
-				tmpSalRand.setRandomSaladFromBook();
 				buttonScriptTMP.checkOutCorrectGUI();
+				tmpSalRand.setRandomSaladFromBook();
 					}
 				}
 		if (!winTmp){
 			print ("Not Correct, -10sec");
 			buttonScriptTMP.timeReduce();
 			buttonScriptTMP.checkOutIncorrectGUI();
+			buttonScriptTMP.locTimerX = 2;
+			buttonScriptTMP.tempX = true;
 		}
 	}
 
